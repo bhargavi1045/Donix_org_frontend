@@ -21,9 +21,11 @@ const Home: React.FC = () => {
   }, [darkMode]);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div className={`${darkMode ? "dark" : ""} `}>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Hero darkMode={darkMode}  />
+      <div className="mt-36 md:mt-40">
+        <Hero darkMode={darkMode} />
+      </div>
     </div>
   );
 };
