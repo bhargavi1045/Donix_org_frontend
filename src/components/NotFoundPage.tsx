@@ -7,7 +7,7 @@ const NotFoundPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
      <header className="w-full text-center py-6 font-bold text-8xl flex items-center justify-center gap-2">
-  404 NOT FOUND <i className="text-4xl text-red-500 pl-8 pt-2"><TbFaceIdError size={90} /></i>
+  404 NOT FOUND <i className="text-4xl text-blue-500 pl-8 pt-2"><TbFaceIdError size={90} /></i>
 </header>
       <section className="flex flex-col md:flex-row items-center justify-center mt-20 px-6 md:px-16 lg:px-24">
           <div className="image flex justify-center md:w-1/2">

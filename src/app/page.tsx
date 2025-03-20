@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Landing_page/Navbar";
 import Hero from "@/components/Landing_page/hero";
+import NotFoundPage from "@/components/NotFoundPage";
 
 const Home: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
@@ -24,6 +25,7 @@ const Home: React.FC = () => {
     <div className={`${darkMode ? "dark" : ""} `}>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Hero darkMode={darkMode} />
+        {/* <NotFoundPage/> */}
     </div>
   );
 };
