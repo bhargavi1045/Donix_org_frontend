@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Landing_page/Navbar";
 import Hero from "@/components/Landing_page/hero";
 import NotFoundPage from "@/components/NotFoundPage";
-
+import Faq from "@/components/Faq/Faq";
 const Home: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     if (typeof window !== "undefined") {

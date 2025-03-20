@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import heroImage from "../../../public/hero_image.png";
+import Faq from "../Faq/Faq";
 
 interface HeroProps {
   darkMode: boolean;
@@ -11,6 +12,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ darkMode }) => {
   // setDarkMode is accepted but not used to avoid frontend changes
   return (
+    <>
     <section
       className={`flex flex-col md:flex-row items-center justify-between h-screen px-6 md:px-20 transition-all duration-500 ${
         darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
@@ -60,6 +62,8 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
         </div>
       </div>
     </section>
+    <Faq/>
+    </>
   );
 };
 
