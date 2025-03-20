@@ -1,23 +1,31 @@
-import Image from "next/image";
-import Navbar from '../components/Navbar';
-import chatbotIcon from "../../public/chatbot_icon.png"
-// import NotFoundPage from "@/components/NotFoundPage";
+"use client";
+import React, { useState, useEffect } from "react";
+import Navbar from "../components/Landing_page/Navbar";
+import Hero from "@/components/Landing_page/hero";
 
-export default function Home() {
+const Home: React.FC = () => {
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("darkMode") === "1"; // Retrieve from localStorage
+    }
+    return false; // Default to false (light mode)
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("darkMode", darkMode ? "1" : "0"); // Save to localStorage
+  }, [darkMode]);
+
   return (
-    <div >
-    <div className="relative z-10">
-  <Navbar />
-</div>
-    <nav className="flex items-center justify-between bg-white/10 backdrop-blur-md  shadow-md">
-  <h1 className="text-green-800 font-bold text-xl flex justify-center items-center pl-80 "></h1>
-  <button className="text-white font-semibold px-4 py-2 rounded-lg mt-6 pr-14">
-    <Image src={chatbotIcon} alt="Chatbot Icon" width={50} height={50} />
-  </button>
-</nav>
-    {/* <NotFoundPage/> */}
-  </div>
-
-      
+    <div className={darkMode ? "dark" : ""}>
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Hero darkMode={darkMode}  />
+    </div>
   );
-}
+};
+
+export default Home;
